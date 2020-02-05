@@ -1,6 +1,5 @@
 function bob(stimulus::AbstractString)
     answer = "Whatever."
-    #new_stim = join(split(replace(stimulus, r"[[:punct]]" => "")), "")
     stimulus = strip(stimulus)
     new_stim = join(split(replace(join(split(stimulus, ""), " "), r"[[:punct:]]" => "")))
     new_stim = replace(new_stim, r"[[:digit:]]" => "")
