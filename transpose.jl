@@ -2,7 +2,8 @@ function transpose_strings(input::AbstractArray)
 
     dims = size(input)
     if dims[1] > 0
-        maxlen = sort(length.(input), rev = true)[1]
+        #maxlen = sort(length.(input), rev = true)[1]
+        maxlen = maximum(length.(input))
         modin = rpad.(input, maxlen)
         out = Vector(undef, maxlen)
 
